@@ -1,0 +1,39 @@
+## https://artifacthub.io/packages/helm/bitnami/postgresql?modal=values
+
+## Authentication parameters
+## ref: https://github.com/bitnami/containers/tree/main/bitnami/postgresql#setting-the-root-password-on-first-run
+## ref: https://github.com/bitnami/containers/tree/main/bitnami/postgresql#creating-a-database-on-first-run
+## ref: https://github.com/bitnami/containers/tree/main/bitnami/postgresql#creating-a-database-user-on-first-run
+##
+auth:
+  ## @param auth.enablePostgresUser Assign a password to the "postgres" admin user. Otherwise, remote access will be blocked for this user
+  ##
+  enablePostgresUser: true
+  ## @param auth.postgresPassword Password for the "postgres" admin user. Ignored if `auth.existingSecret` is provided
+  ##
+  postgresPassword: "password"
+  ## @param auth.username Name for a custom user to create
+  ##
+  username: "user"
+  ## @param auth.password Password for the custom user to create. Ignored if `auth.existingSecret` is provided
+  ##
+  password: "password"
+  ## @param auth.database Name for a custom database to create
+  ##
+  database: ""
+
+##
+## @section PostgreSQL Primary parameters
+##
+primary:
+  ## @param primary.name Name of the primary database (eg primary, master, leader, ...)
+  ##
+  name: primary
+  ## @param primary.configuration PostgreSQL Primary main configuration to be injected as ConfigMap
+  ## ref: https://www.postgresql.org/docs/current/static/runtime-config.html
+  ##
+  # configuration: ""
+  ## @param primary.existingConfigmap Name of an existing ConfigMap with PostgreSQL Primary configuration
+  ## NOTE: `primary.configuration` and `primary.pgHbaConfiguration` will be ignored
+  ##
+  # existingConfigmap: ""

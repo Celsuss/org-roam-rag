@@ -9,3 +9,10 @@
 
 # Undo-tree save-files
 *.~undo-tree
+
+# Terraform
+terraform/.terraform/*
+terraform/.terraform.lock.hcl
+
+# Jupyter
+.ipynb_checkpoints/*

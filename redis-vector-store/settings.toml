@@ -1,0 +1,5 @@
+redis_endpoint = "redis://localhost:6379"
+data_dir = "~/workspace/second-brain/org-roam/"
+
+# Secrets
+openai_api_key = "dummy"

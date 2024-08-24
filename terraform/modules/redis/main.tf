@@ -1,9 +1,10 @@
 
-resource "helm_release" "postgres" {
-  name       = "postgres"
+resource "helm_release" "redis" {
+  name       = "redis"
   namespace  = "orr-ns"
   repository = "https://charts.bitnami.com/bitnami"
-  chart      = "postgresql"
+  repository = "oci://registry-1.docker.io/bitnamicharts/redis"
+  chart      = "redis"
 
   values = [
     templatefile("${path.module}/values.yaml", {

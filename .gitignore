@@ -16,3 +16,10 @@ terraform/.terraform.lock.hcl
 
 # Jupyter
 .ipynb_checkpoints/*
+
+# Secrets
+*.secrets.toml
+
+# Terraform
+*.tfstate
+*.tfstate.backup
